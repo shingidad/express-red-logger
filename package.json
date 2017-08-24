@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "express에서 발생된 내용들을 모두 로그에 저장시키는용도",
   "main": "dist/index.js",
-  "private": true,
   "dependencies": {},
   "devDependencies": {
     "abbrev": "^1.1.0",
