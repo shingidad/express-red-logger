@@ -83,11 +83,11 @@ export const getContentsTypeFilter = () => {
 
 let __Event = (log, req, res) => {
 	const keys = Object.keys(log);
+	console.log(colors.bg.Cyan + colors.fg.White + '▼', `${TAG}` + colors.Reset);
 	for (let i = 0; i < keys.length; i++) {
 		const key = keys[i];
 		const value = log[key];
 		const type = typeof value;
-
 		const icon = i !== keys.length - 1 ? '├' : '┕';
 		if (type === 'object') {
 			console.log(colors.fg.Cyan + icon + colors.Bright + ` ${key}[${colors.Reset}${type}${colors.fg.Cyan}]${colors.Reset}:`, colors.Reset);
@@ -155,4 +155,4 @@ const Logger = (req, res, next) => {
 	next();
 };
 
-export default Logger;
+export default Object.assign(Logger, {on});

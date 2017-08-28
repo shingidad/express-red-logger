@@ -78,11 +78,11 @@ var getContentsTypeFilter = exports.getContentsTypeFilter = function getContents
 
 var __Event = function __Event(log, req, res) {
 	var keys = Object.keys(log);
+	console.log(colors.bg.Cyan + colors.fg.White + '▼', "" + TAG + colors.Reset);
 	for (var i = 0; i < keys.length; i++) {
 		var key = keys[i];
 		var value = log[key];
 		var type = typeof value === "undefined" ? "undefined" : _typeof(value);
-
 		var icon = i !== keys.length - 1 ? '├' : '┕';
 		if (type === 'object') {
 			console.log(colors.fg.Cyan + icon + colors.Bright + (" " + key + "[" + colors.Reset + type + colors.fg.Cyan + "]" + colors.Reset + ":"), colors.Reset);
@@ -158,5 +158,5 @@ var Logger = function Logger(req, res, next) {
 	next();
 };
 
-exports.default = Logger;
+exports.default = Object.assign(Logger, { on: on });
 //# sourceMappingURL=index.js.map

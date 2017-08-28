@@ -53,10 +53,10 @@ typings/
 
 # Yarn Integrity file
 .yarn-integrity
+yarn.lock
 
 # dotenv environment variables file
 .env
 
-.idea
-.babelrc
-yarn.lock
+test
+.DS_Store
